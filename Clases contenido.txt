@@ -1,0 +1,42 @@
+function suma(a,b) {
+    return (a + b);
+}
+
+const resta = (a,b) => (a - b);
+
+function calcular (a, b, mifuncion) {
+    return mifuncion(a, b);
+}
+
+console.log(suma(1,3))
+console.log(resta(1,3))
+
+console.log(calcular(1,3, suma))
+
+
+******* CLASE 2 **********
+* Explicacion de F-12 en chrome / explorer
+* Array.isArray ([])
+* JSON.parse / stringify
+* Arrays 
+** Push
+** for / foreach
+** funciones anonimas
+Ejemplo calcular(a, b, funcion)
+
+suma(a, b) => a + b;
+resta(a, b) => a - b;
+
+calcular(a, b, f) {
+    f(a, b);
+}
+
+calcular
+
+** find
+** filter
+** map
+** ...
+** sort
+** pop
+** shift / unshift
