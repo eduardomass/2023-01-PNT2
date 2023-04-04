@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{ valor }}
+
+        <hr>
+            <input type="text" v-model="valor">
+        <hr>
+        {{ miLista }}
+        <ul v-show="mostrando">
+            <li v-for="(item, index) in miLista "
+            :title="item.id"
+            :class="item.genero"
+            >{{item.nombre}}</li>
+        </ul>
+
+        <hr>
+
+        <div v-for="(item, index) in personajes ">
+            Nombre : {{item.name}}<br>
+            Genero : {{item.gender}}<br>
+            <img :src="item.image">
+        </div>
+
+        <hr>
+            <input type="button" value="Agregar Nodo" v-on:click="agregarPersona()">
+        <hr>
+        <input type="button" value="Mostrar/Ocultar" v-on:click="mostrando = !mostrando">
+    <hr>
+        <input type="button" id="btn" value="Sumar!" v-on:click="valor++" />
+        <input type="button" id="btn2" value="Restar!" v-on:click="valor--" />
+        
+    </div>
+</body>
+
+<style>
+    .Masculino
+    {
+        color: blue;
+    }
+    .Femenino
+    {
+        color:red;
+    }
+    .Transgenero
+    {
+        color:yellow;
+    }
+    .Otro
+    {
+        color: white;
+        background-color: black;
+    }
+</style>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            miMensaje: 'Hola mundo cruel',
+            valor: 0,
+            maxid : 0,
+            mostrando : true,
+            miLista : [
+                {id: 1, nombre : 'Eduardo', genero:'Masculino'},
+                {id: 2, nombre : 'Sebastian', genero:'Femenino'},
+                {id: 3, nombre : 'Mass', genero:'Transgenero'}
+            ],
+            personajes : []
+        },
+        methods : {
+            agregarPersona()
+            {
+                this.maxid++;
+                const persona = {id: this.maxid, nombre : 'xxxx', genero:'Masculino'};
+                this.miLista.push(persona);
+            }
+        },
+        mounted: function () {
+                console.log('Montado! ' + this.miLista.length)
+                this.maxid = Math.max(...this.miLista.map(o=>o.id));
+        },
+        created: async function () {
+            const resultado = await fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5');                
+            this.personajes = await resultado.json();
+            console.log(this.personajes);
+        }
+    })
+</script>
+
+</html>
