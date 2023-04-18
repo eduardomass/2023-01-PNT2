@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="checkbox" v-model="uno"> Uno
+        <input type="checkbox" v-model="dos"> Dos
+        <input type="text" v-model="message">
+        <input type="text" v-model="otro" :disabled="valor">
+        <label>{{valor}}</label>
+        <label>{{otrovalor}}</label>
+    </div>
+</body>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            dos : false,
+            uno : true, 
+            otro : 'Este es otro mensaje'
+
+        },
+        methods : {
+        },
+        mounted: function () {
+        },
+        created: async function () {
+        },
+        computed: {
+            valor(){
+                console.log('Evaluando!!')
+                return this.uno && this.dos && this.message == 'HOLA';
+            },
+            otrovalor(){
+                console.log('Evaluando dos!!')
+                return this.otro == 'HOLA';
+            }
+        }
+    })
+</script>
+
+</html>
