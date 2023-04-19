@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    
+
+    <title>Document</title>
+</head>
+<body>
+    
+    Este es mi primer ejemplo de HTML con VUE.js
+    <hr>
+    <div id="app">
+        Cantidad presionada : {{cantidad}}
+        <hr>
+        <personaje3 nombre="Edu" @click-personaje="actualizarclicks"></personaje3>
+        <personaje3 nombre="Ricky" @click-personaje="actualizarclicks"></personaje3>
+        <personaje3 nombre="Morty" @click-personaje="actualizarclicks"></personaje3>
+        <personaje3 nombre="Carlos" @click-personaje="actualizarclicks"></personaje3>
+    </div>
+    <hr>
+    <ol>
+        <li>hacer segun el rick and morty api, un componente personaje que muestre caractreisticas mas foto</li>
+        <li>Hacer que cuando hace click en una foto actualice el numero de veces que hizo click sobre el personaje y clicks general en toda la aplicacion</li>
+        <li>Personas</li>
+        <ol>
+            <li>Hacer un componente que se llame Personas</li>
+            <li>Que el jugador pueda hablar a otro Personas y ese Personas muestra el mensaje y de quien lo recibio</li>
+        </ol>
+        <li>En el jugue de guerra exusten componente ejemplos : 
+            Jugador, hacer el ejerecicio pensando en esquema de 2 jugadores
+        </li>
+    </ol>
+    <script src="app3.js"></script>
+
+</body>
+</html>
