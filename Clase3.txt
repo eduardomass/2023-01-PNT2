@@ -1,0 +1,56 @@
+Explicacion de ejercicio
+Stackblitz.com
+innerHTML
+appendChild
+getElementById
+addEventListener
+
+vue
+v-on:click
+data : {
+
+}
+methods: {
+
+}
+v-model="miTexto" en un input
+v-for
+<ul>
+<li v-for="(item, index) in myArray" 
+:class="person.species.tolowercase()
+:item="index"
+:title="propiedad"
+>{{item}}</li>
+
+removelast()
+:disable="myarray.lengh == 0
+ciclo de velocidad
+created:function()
+{
+    //mostrar loeader
+    //byuscar datos
+
+    //anyapi
+    //ocultar
+}
+mounted : function()
+{}
+}
+
+
+async created (){
+    const resultado = await fetch(https://rickandmortyapi.com/api/character/1,2,3);
+}
+
+const data = await result.json() 
+}
+
+computed: {
+    //propiedad cuando cambia el valor sino cache.
+}
+}
+
+api.coincap.io/v2/assets/
+ejercicio de ordenar
+destacar las 3 primeras o hacer degrade de colores seria excelente
+indicador de positivo o negativo con azul o rojo tambien

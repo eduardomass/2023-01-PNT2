@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi titulo!</title>
+  </head>
+  <body>
+    <div id="divPrincial">
+      <p>
+        <!-- use the router-link component for navigation. -->
+        <!-- specify the link by passing the `to` prop. -->
+        <!-- `<router-link>` will render an `<a>` tag with the correct `href` attribute -->
+        <router-link to="/">Index</router-link>
+        <router-link to="/about">Usuarios</router-link>
+      </p>
+
+      <router-view></router-view>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
