@@ -1,19 +1,25 @@
 import { createApp } from 'vue'
-
+import { createPinia } from 'pinia'
+import axios from 'axios'
 import {createRouter, createWebHistory} from 'vue-router'
+
 import './assets/main.css'
 
 import App from './App.vue'
+
 import Index from './components/views/Index.vue'
-import Personajes from './components/views/Personajes.vue'
+import Usuarios from './components/views/usuarios.vue'
 import Personaje from './components/views/Personaje.vue'
-import Dos from './components/views/Dos.vue'
+import Login from './components/views/login.vue'
+
+
+axios.defaults.baseURL = 'https://6448719ce7eb3378ca2eb11b.mockapi.io'
 
 const routes = [
     { path : '/' , component : Index}, 
-    { path : '/personajes' , component : Personajes}, 
+    { path : '/usuarios' , component : Usuarios}, 
+    { path : '/login' , component : Login}, 
     { path : '/personaje/:id' , component : Personaje}, 
-    { path : '/dos/:uno/:dos' , component : Dos}, 
 ]
 
 const router = createRouter(
@@ -22,5 +28,6 @@ const router = createRouter(
         routes
     }
 );
+const pinia = createPinia()
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(pinia).use(router).mount('#app')
