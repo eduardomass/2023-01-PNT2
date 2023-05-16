@@ -1,6 +1,10 @@
 <script setup>
 import {useRouter} from 'vue-router'
 const router = useRouter()
+
+import { sessionStore } from '../../stores/session';  
+const storeSession = sessionStore()
+
 function navegar(id)
 {
     router.push(
@@ -10,6 +14,10 @@ function navegar(id)
 </script>
 <template>
     <h1>Lista de Personajes</h1>
+    <hr/>
+    <div>
+        {{ this.storeSession.usuario }}
+    </div>
     <table>
         <tr>
             <td>1</td>

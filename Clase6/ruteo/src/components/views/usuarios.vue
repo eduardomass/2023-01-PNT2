@@ -5,6 +5,9 @@ import { usuariosStore } from '../../stores/usuarios';
 import { contadorStore } from '../../stores/contador';  
 const storeContador = contadorStore();
 
+import { sessionStore } from '../../stores/session';  
+const storeSession = sessionStore()
+
 const store = usuariosStore()
 const router = useRouter()
 function navegar(id)
@@ -16,6 +19,8 @@ function navegar(id)
 </script>
 <template>
     <h1>Lista de Usuarios {{ storeContador.cantidad }}</h1>
+    <h2>{{ storeSession.usuario }}</h2>
+    <h3>{{ storeSession.getUserName }}</h3>
     <table>
         <tr>
             <td>1</td>

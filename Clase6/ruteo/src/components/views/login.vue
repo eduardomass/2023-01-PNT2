@@ -14,7 +14,7 @@
                   <h4 class="mt-1 mb-5 pb-1">Login de turnera</h4>
                 </div>
                 <div class="text-center" >
-                  {{ this.mensaje }}
+                  {{ this.storeSession.usuario }}
                 </div>
 
                 <form>
@@ -65,6 +65,7 @@
 <script>
 
 
+import { sessionStore } from '../../stores/session';  
 
     export default
     {
@@ -73,12 +74,13 @@
             return {
                 usaurio : '',
                 password : '',
-                mensaje : 'asdasd'
+                mensaje : '',
+                storeSession : sessionStore()
             }
         }, 
         methods:{
             async iniciarSession(){
-                
+              
                 const url = new URL('https://6448719ce7eb3378ca2eb11b.mockapi.io/users');
                 url.searchParams.append('password', this.password); //https://PROJECT_TOKEN.mockapi.io/tasks?completed=false
                 url.searchParams.append('user', this.usuario);
@@ -93,7 +95,11 @@
                                 if (data.length == 0)
                                   this.mensaje = 'El usuario no se encontro';
                                 else
-                                  this.mensaje = data[0].id;
+                                {
+                                  this.mensaje = JSON.stringify(data[0]);
+                                  this.storeSession.login(data[0]);
+                                }
+                                  //this.mensaje = data[0].id;
                                 return data;
                             }).catch((err) => {
                             console.log(err);

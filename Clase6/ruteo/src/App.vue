@@ -11,7 +11,7 @@
     <ul class="navbar-nav">
           <li class="nav-item active"><router-link class="nav-link" to="/">Index</router-link></li>
           <li class="nav-item"><router-link class="nav-link"  to="/login">Login</router-link></li>
-          <li class="nav-item"><router-link class="nav-link"  to="/usuarios">Usuarios</router-link></li>
+          <li class="nav-item"><router-link class="nav-link"  to="/users">Usuarios</router-link></li>
           <li class="nav-item"><router-link class="nav-link"  to="/doctores">Doctores</router-link></li>
     </ul>
   </div>
